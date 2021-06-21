@@ -1,0 +1,15 @@
+<% if (loggedIn) { %>
+    Logged in as <a href="<%=`/users/${currentUser._id}`%>">
+        <%= currentUser.fullName %>
+    </a>
+    <%} else {%>
+        <a href="/users/login">Log In</a>
+        <% } %>
+            <li>
+                <%- include courses/_coursesModel %>
+            </li>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/js/recipeApp.js"></script>
+         
+            <div id="apiToken" data-token="<%= currentUser.apiToken %>" style="display: none;">
